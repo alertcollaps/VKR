@@ -19,6 +19,7 @@ public class ServerHandler extends Thread{
             Socket client;
             try {
                 client = server.accept();
+                System.out.println("request" + client);
                 ClientHundler handler = new ClientHundler(client);
                 handler.start();
                 ServerLoader.handlers.put(client, handler);

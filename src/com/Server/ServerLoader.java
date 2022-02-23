@@ -1,8 +1,8 @@
 package com.Server;
 
-import com.Client.Client.packet.PacketAuthorize;
-import com.Client.Client.packet.PacketMessage;
-import com.Server.packet.OPacket;
+
+import com.Server.packet.PacketAuthorize;
+
 
 import java.io.DataOutputStream;
 import java.io.IOException;

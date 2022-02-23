@@ -1,4 +1,4 @@
-package com.Client.Client;
+package com.example.appchat.Client;
 
 import com.Client.Client.packet.PacketAuthorize;
 import com.Client.Client.packet.PacketManager;
