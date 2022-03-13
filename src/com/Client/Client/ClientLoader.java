@@ -1,9 +1,6 @@
 package com.example.appchat.Client;
 
-import com.Client.Client.packet.PacketAuthorize;
-import com.Client.Client.packet.PacketManager;
-import com.Client.Client.packet.OPacket;
-import com.Client.Client.packet.PacketMessage;
+import com.Client.Client.packet.*;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -13,8 +10,8 @@ import java.util.Scanner;
 
 public class ClientLoader {
     private static Socket socket;
-    private static String host = "localhost";
-    private static int port = 8888;
+    private static String host = "vkrmaven.herokuapp.com";
+    private static int port = 80;
     private static String nickname = "default";
     private static boolean sentNickname = false;
 
@@ -27,7 +24,9 @@ public class ClientLoader {
     private static void connect(){
         try {
             socket = new Socket(host, port);
+            System.out.println("connected");
         } catch (IOException e) {
+            System.out.println("Cannt connect");
             e.printStackTrace();
         }
 
@@ -72,7 +71,7 @@ public class ClientLoader {
                     return;
                 }
                 if (!sentNickname){
-                    sendPacket(new PacketAuthorize(line));
+                    sendPacket(new PacketKeys(line));
                     sentNickname = true;
                     continue;
                 }
